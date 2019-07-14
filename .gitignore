@@ -1,2 +1,4 @@
 /src/IdentityServer/bin
 /src/IdentityServer/obj
+/src/Api/bin
+/src/Api/obj
