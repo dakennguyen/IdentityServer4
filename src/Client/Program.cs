@@ -18,14 +18,9 @@ namespace Client
                 return;
             }
 
-            // request token
-            var tokenResponse = await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
-            {
-                Address = disco.TokenEndpoint,
-                ClientId = "client",
-                ClientSecret = "secret",
-                Scope = "api1"
-            });
+            // var tokenResponse = await ClientCredentialsAsync(client, disco);
+            var tokenResponse = await ResourceOwnerPasswordsAsync(client, disco);
+
             if (tokenResponse.IsError)
             {
                 Console.WriteLine(tokenResponse.Error);
@@ -47,6 +42,33 @@ namespace Client
                 var content = await response.Content.ReadAsStringAsync();
                 Console.WriteLine(JArray.Parse(content));
             }
+        }
+
+        private static async Task<TokenResponse> ClientCredentialsAsync(HttpClient client, DiscoveryResponse disco)
+        {
+            // request token
+            return await client.RequestClientCredentialsTokenAsync(new ClientCredentialsTokenRequest
+            {
+                Address = disco.TokenEndpoint,
+                ClientId = "client",
+                ClientSecret = "secret",
+                Scope = "api1"
+            });
+        }
+
+        private static async Task<TokenResponse> ResourceOwnerPasswordsAsync(HttpClient client, DiscoveryResponse disco)
+        {
+            // request token
+            return await client.RequestPasswordTokenAsync(new PasswordTokenRequest
+            {
+                Address = disco.TokenEndpoint,
+                ClientId = "ro.client",
+                ClientSecret = "secret",
+
+                UserName = "alice",
+                Password = "password",
+                Scope = "api1"
+            });
         }
     }
 }
