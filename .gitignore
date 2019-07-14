@@ -2,3 +2,5 @@
 /src/IdentityServer/obj
 /src/Api/bin
 /src/Api/obj
+/src/Client/bin
+/src/Client/obj
