@@ -4,4 +4,6 @@
 /src/Api/obj
 /src/Client/bin
 /src/Client/obj
+/src/Client_MVC/bin
+/src/Client_MVC/obj
 /src/IdentityServer/identityserver4_log.txt
