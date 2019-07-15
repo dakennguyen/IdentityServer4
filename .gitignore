@@ -1,5 +1,7 @@
 /src/IdentityServer/bin
 /src/IdentityServer/obj
+/src/IdentityServer_AspNetIdentity/bin
+/src/IdentityServer_AspNetIdentity/obj
 /src/Api/bin
 /src/Api/obj
 /src/Client/bin
@@ -9,3 +11,4 @@
 /src/Client_JavaScript/bin
 /src/Client_JavaScript/obj
 /src/IdentityServer/identityserver4_log.txt
+/src/IdentityServer_AspNetIdentity/identityserver4_log.txt
