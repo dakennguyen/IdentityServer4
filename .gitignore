@@ -6,4 +6,6 @@
 /src/Client/obj
 /src/Client_MVC/bin
 /src/Client_MVC/obj
+/src/Client_JavaScript/bin
+/src/Client_JavaScript/obj
 /src/IdentityServer/identityserver4_log.txt
